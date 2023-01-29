@@ -29,6 +29,17 @@ for ($i = 0; $i < 5; $i++) {
 }
 
 
+$folder_name = 'private\collage\something .'$usuario .'_'. $created_at;
+
+if (!file_exists($folder_name)) {
+    mkdir($folder_name, 0777, true);
+    echo "Carpeta creada con éxito.";
+} else {
+    echo "La carpeta ya existe.";
+}
+
+
+
 mysqli_close($link);
 
 ?>
