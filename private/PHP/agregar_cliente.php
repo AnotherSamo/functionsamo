@@ -6,7 +6,6 @@ $contra=$_POST['agr_contra'];
 $name=$_POST['agr_nombre'];
 $paquete=$_POST['agr_pack'];
 $dire=$_POST['agr_dire'];
-
 $fechaActual_1 = date('y-m-d h:i:s');
 
 
@@ -29,13 +28,14 @@ for ($i = 0; $i < 5; $i++) {
 }
 
 
-$folder_name = 'private\collage\something .'$usuario .'_'. $created_at;
+$folder_name = '../../private/collage/something/'.$last_id .'_'. $usuario .'_' ;
+
 
 if (!file_exists($folder_name)) {
     mkdir($folder_name, 0777, true);
-    echo "Carpeta creada con éxito.";
+    console.log("Carpeta creada con éxito.");
 } else {
-    echo "La carpeta ya existe.";
+    console.log( "La carpeta ya existe.");
 }
 
 
