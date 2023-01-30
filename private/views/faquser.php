@@ -190,3 +190,10 @@ if ($filas['user_rol'] == 3) {
   </footer>
 </body>
 </html>
+<?php
+} else {
+  session_start();
+  session_destroy();
+  header("location:.../index.php");
+}
+?>

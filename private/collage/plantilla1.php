@@ -1,3 +1,20 @@
+<?php
+//seguridad de sessiones paginacion
+session_start();
+error_reporting(0);
+$varsesion = $_SESSION['usuario'];
+include("../code/config.php");
+$sql = "SELECT * FROM users WHERE name LIKE '%$varsesion'";
+$resultado = mysqli_query($link, $sql);
+$filas = mysqli_fetch_array($resultado);
+if ($varsesion == null || $varsesion = '') {
+  header("location:../../index.php");
+  die();
+}
+
+if ($filas['user_rol'] == 2) {
+
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -142,6 +159,13 @@
     
   </body>
 </html>
+<?php
+} else {
+  session_start();
+  session_destroy();
+  header("location:.../index.php");
+}
+?>
 <script>
     $(document).ready(function(){
 

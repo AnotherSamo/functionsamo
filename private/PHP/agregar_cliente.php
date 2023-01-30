@@ -28,7 +28,7 @@ for ($i = 0; $i < 5; $i++) {
 }
 
 
-$folder_name = '../../private/collage/something/'.$last_id .'_'. $usuario .'_' ;
+$folder_name = '../../private/collage/something/'.$last_id ;
 
 
 if (!file_exists($folder_name)) {

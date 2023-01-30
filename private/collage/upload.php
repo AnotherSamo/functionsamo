@@ -1,40 +1,34 @@
 <?php
 
-if(isset($_POST["image"]))
-{
+if (isset($_POST["image"])) {
+    session_start();
+  
+    $varsesion = $_SESSION['usuario'];
+    include("../code/config.php");
+    $sql = "SELECT * FROM users WHERE name LIKE '%$varsesion'";
+    $resultado = mysqli_query($link, $sql);
+    $filas = mysqli_fetch_array($resultado);
+    if ($filas['user_rol'] == '2') {
+        $folder = 'something/' . $filas['id_user'] . '/';
+    } else {
+        $sql2 = "SELECT * FROM students WHERE code_student = '$varsesion'";
+        $resultado2 = mysqli_query($link, $sql2);
+        $filas2 = mysqli_fetch_array($resultado2);
+        if ($filas['user_rol'] == '3') {
+            $folder = 'something/' . $filas2['id_user_student'] . '/';
+        }
+    }
     $data = $_POST["image"];
     $imageId = $_POST["imageId"];
-   
+
 
     $image_array_1 = explode(";", $data);
     $image_array_2 = explode(",", $image_array_1[1]);
     $data = base64_decode($image_array_2[1]);
 
 
-    switch ($imageId) {
-        case "image1":
-            $folder = "something/upload/";
-            break;
-        case "image2":
-            $folder = "something/upload2/";
-            break;
-        case "image3":
-            $folder = "something/";
-            break;
-        case "image4":
-            $folder = "something/";
-            break;
-        case "image5":
-            $folder = "something/";
-            break;
-        case "image6":
-            $folder = "something/";
-            break;
-    }
+    $imageName = $folder . '_' . $imageId . '.png';
 
-   
-    $imageName = $folder . '_'.$imageId . '.png';
-    
 
     file_put_contents($imageName, $data);
 
