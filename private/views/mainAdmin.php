@@ -129,11 +129,6 @@ if ($filas['user_rol'] == 2) {
           <a href="editpageAdmin.php" ><img src="../../public/img/icons/galeryIcon.png" alt="" width="50px" height="50px"></a>
           <p style="color: black;">Ver Fotolibro</p>
         </div>
-        
-        <div class="intern4 scale-in-center">
-            <a href="../../private/collage/plantilla1.php"><img src="../../public/img/icons/addfotoIcon.png" alt="" width="50px" height="50px"></a>
-            <p style="color: black;">Añadir Fotos</p>
-        </div>
 
         <div class="intern5 scale-in-center">
             <a href="faqadmin.php"><img src="../../public/img/icons/Ayudaicon.png" alt="" width="50px" height="50px"></a>

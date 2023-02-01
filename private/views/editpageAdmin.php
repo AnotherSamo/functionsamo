@@ -18,6 +18,9 @@ if ($filas['user_rol'] == 2) {
 <!DOCTYPE html>
 <html lang="en">
     <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>GaDo Studio | Edit Page</title>
         <link rel="shortcut icon" href="../../public/img/icons/Logo.png" />
         <link rel="stylesheet" href="../../private/styles/style.css">
@@ -46,6 +49,11 @@ if ($filas['user_rol'] == 2) {
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/css/swiper.min.css">
     </head>
+    <script>
+      $(document).ready(function(){
+      $('.bxslider').bxSlider();
+      });
+    </script>
 <body>
     <div class="pos-f-t">
         <div class="collapse" id="navbarToggleExternalContent">
@@ -65,34 +73,38 @@ if ($filas['user_rol'] == 2) {
             <img src="../../public/img/icons/Logo.png" width="30" height="30" class="align-top justify-content-center" alt="">
             GaDo Studio
           </a>
-          <a class="btn btn-outline-success" type="submit" href="mainmaster.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+          <a class="btn btn-outline-success" type="submit" href="mainAdmin.php"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/>
           </svg> Back</a>
         </nav>
       </div>
-      <h2 style="text-align: center;">Foto Libro</h2>
-      <div class="bodyslider slide-in-top">
-        
-        <input type="radio" name="position" checked />
-        <input type="radio" name="position" />
-        <input type="radio" name="position" />
-        <input type="radio" name="position" />
-          <main id="carousel">
-            <div class="item"><img src="../../private/img/slide1.jpg"  width="100%" height="100%"></div>
-            <div class="item"><img src="../../private/img/slide2.jpg"  width="100%" height="100%"></div>
-            <div class="item"><img src="../../private/img/slide3.jpg"  width="100%" height="100%"></div>
-            <div class="item"><img src="../../private/img/slide4.jpg"  width="100%" height="100%"></div>
-          <main>
-      </div>
+      <h2 style="text-align: center;">Foto Libro</h2><br>
       
+        <?php 
+        $folder = '../collage/plantillas';
+        $images = glob($folder.'/*.{jpg,jpeg,png,gif}', GLOB_BRACE);
+        ?>
+        <div class="container swing-in-top-fwd2">
+          <ul class="bxslider">
+          <?php
+          foreach($images as $image):
+          ?>
+          <li><img src="<?php echo $image; ?>" alt=""></li>
+          <?php
+          endforeach;
+          ?>
+          </ul>
+        </div>
 
+
+  
       <!-- BOTONES DE ACCION -->
     <div class="float-child3">
         <div class="green">
           
           
           <div class="intern4 scale-in-center">
-              <a href=""><img src="../../public/img/icons/editIcon.png" alt="" width="50px" height="50px"></a>
+              <a href="../collage/indice.php"><img src="../../public/img/icons/editIcon.png" alt="" width="50px" height="50px"></a>
               <p style="color: black;">Continuar Collage</p>
           </div>
   
@@ -105,7 +117,9 @@ if ($filas['user_rol'] == 2) {
       <!-- BOTONES DE ACCION -->
 
 </body>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.5/jquery.bxslider.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.5/jquery.bxslider.css">
     <!-- Copyright -->
     <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
       <img src="../../public/img/icons/CloverNetLogoGray.png" alt="" width="25px" height="25px">
