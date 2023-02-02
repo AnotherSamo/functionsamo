@@ -60,7 +60,7 @@ if ($filas['user_rol'] == 2) {
                 <label for="upload_image1">
                   <img
                     src="user.png"
-                    id="uploaded_image1"
+                    id="uploaded_plantilla1"
                     class="img-responsive "
                   />
                   <div class="overlay">
@@ -84,7 +84,7 @@ if ($filas['user_rol'] == 2) {
       <div class="row">
         <div class="screenShotButton" >
           <button type="button" class="btn btn-primary" id="saveScreenshot" >
-            Save
+            Guardar Página
             </button>
             <div id="alert-container"></div>
         </div>
@@ -179,7 +179,7 @@ var cropper;
 // handle change event for first image input
 $('#upload_image1').change(function(event){
     var files = event.target.files;
-    var imageId = "image1";
+    var imageId = "plantilla1";
     var done = function (url) {
         var image = document.getElementById('sample_image');
         image.src = url;

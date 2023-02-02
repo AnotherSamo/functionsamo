@@ -268,7 +268,7 @@ var cropper;
 // handle change event for first image input
 $('#upload_image1').change(function(event){
     var files = event.target.files;
-    var imageId = "image1";
+    var imageId = "plantilla6a-image1";
     var done = function (url) {
         var image = document.getElementById('sample_image');
         image.src = url;
@@ -288,7 +288,7 @@ $('#upload_image1').change(function(event){
 // handle change event for second image input
 $('#upload_image2').change(function(event){
     var files = event.target.files;
-    var imageId = "image2";
+    var imageId = "plantilla6a-image2";
     var done = function (url) {
         var image = document.getElementById('sample_image');
         image.src = url;
@@ -308,7 +308,7 @@ $('#upload_image2').change(function(event){
 // handle change event for THIRD image input
 $('#upload_image3').change(function(event){
     var files = event.target.files;
-    var imageId = "image3";
+    var imageId = "plantilla6a-image3";
     var done = function (url) {
         var image = document.getElementById('sample_image');
         image.src = url;
@@ -328,7 +328,7 @@ $('#upload_image3').change(function(event){
 // handle change event for FOURTH image input
 $('#upload_image4').change(function(event){
     var files = event.target.files;
-    var imageId = "image4";
+    var imageId = "plantilla6a-image4";
     var done = function (url) {
         var image = document.getElementById('sample_image');
         image.src = url;
@@ -348,7 +348,7 @@ $('#upload_image4').change(function(event){
 // handle change event for FIFTH image input
 $('#upload_image5').change(function(event){
     var files = event.target.files;
-    var imageId = "image5";
+    var imageId = "plantilla6a-image5";
     var done = function (url) {
         var image = document.getElementById('sample_image');
         image.src = url;
@@ -364,10 +364,10 @@ $('#upload_image5').change(function(event){
         reader.readAsDataURL(files[0]);
     }
 });
-
+// handle change event for sixth image input
 $('#upload_image6').change(function(event){
     var files = event.target.files;
-    var imageId = "image6";
+    var imageId = "plantilla6a-image6";
     var done = function (url) {
         var image = document.getElementById('sample_image');
         image.src = url;
@@ -384,24 +384,7 @@ $('#upload_image6').change(function(event){
     }
 });
 
-$('#upload_image6').change(function(event){
-    var files = event.target.files;
-    var imageId = "image6";
-    var done = function (url) {
-        var image = document.getElementById('sample_image');
-        image.src = url;
-        image.setAttribute("data-imageId", imageId);
-        $modal.modal('show');
-    };
 
-    if (files && files.length > 0) {
-        reader = new FileReader();
-        reader.onload = function (event) {
-            done(reader.result);
-        };
-        reader.readAsDataURL(files[0]);
-    }
-});
 
 $modal.on('shown.bs.modal', function() {
     var image = document.getElementById('sample_image');
@@ -491,6 +474,7 @@ $("#saveScreenshot").click(function(){
     custom_alert.remove();
   }, 3000);
 });
+
 });        
     
     

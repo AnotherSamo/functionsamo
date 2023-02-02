@@ -89,9 +89,9 @@ if ($filas['user_rol'] == 2) {
           <div class="col-sm-0 mb-3 mb-sm-0">
             <div class="card" style="width: 10rem;">
               <div class="card-body">
-              <img src="plantillas/pagina_2.png" class="card-img-top" alt="...">
+              <img src="plantillas/pagina_2a.png" class="card-img-top" alt="...">
                 <h5 class="card-title"><br>Plantilla 2</h5>
-                <a href="plantilla1A1AB.html" class="btn btn-primary">Usar</a>
+                <a href="plantilla2a.html" class="btn btn-primary">Usar</a>
               </div>
             </div>
           </div>
@@ -100,9 +100,9 @@ if ($filas['user_rol'] == 2) {
           <div class="col-sm-0 mb-3 mb-sm-0">
             <div class="card" style="width: 10rem;">
               <div class="card-body">
-              <img src="plantillas/pagina_3.png" class="card-img-top" alt="...">
+              <img src="plantillas/pagina_2b.png" class="card-img-top" alt="...">
                 <h5 class="card-title"><br>Plantilla 3</h5>
-                <a href="plantilla1A2AB.html" class="btn btn-primary">Usar</a>
+                <a href="plantilla2b.html" class="btn btn-primary">Usar</a>
               </div>
             </div>
           </div>
@@ -111,9 +111,9 @@ if ($filas['user_rol'] == 2) {
           <div class="col-sm-0 mb-3 mb-sm-0">
             <div class="card" style="width: 10rem;">
               <div class="card-body">
-              <img src="plantillas/pagina_4.png" class="card-img-top" alt="...">
+              <img src="plantillas/pagina_3a.png" class="card-img-top" alt="...">
                 <h5 class="card-title"><br>Plantilla 4</h5>
-                <a href="plantilla1I1D.html" class="btn btn-primary">Usar</a>
+                <a href="plantilla3a.html" class="btn btn-primary">Usar</a>
               </div>
             </div>
           </div>
@@ -122,9 +122,9 @@ if ($filas['user_rol'] == 2) {
           <div class="col-sm-0 mb-3 mb-sm-0">
             <div class="card" style="width: 10rem;">
               <div class="card-body">
-              <img src="plantillas/pagina_5.png" class="card-img-top" alt="...">
+              <img src="plantillas/pagina_3b.png" class="card-img-top" alt="...">
                 <h5 class="card-title"><br>Plantilla 5</h5>
-                <a href="plantilla1I2D.html" class="btn btn-primary">Usar</a>
+                <a href="plantilla3b.html" class="btn btn-primary">Usar</a>
               </div>
             </div>
           </div>
@@ -133,9 +133,9 @@ if ($filas['user_rol'] == 2) {
           <div class="col-sm-0 mb-3 mb-sm-0">
             <div class="card" style="width: 10rem;">
               <div class="card-body">
-              <img src="plantillas/pagina_6.png" class="card-img-top" alt="...">
+              <img src="plantillas/pagina_3c.png" class="card-img-top" alt="...">
                 <h5 class="card-title"><br>Plantilla 6</h5>
-                <a href="plantilla2A1AB.html" class="btn btn-primary">Usar</a>
+                <a href="plantilla3c.html" class="btn btn-primary">Usar</a>
               </div>
             </div>
           </div>
@@ -144,9 +144,9 @@ if ($filas['user_rol'] == 2) {
           <div class="col-sm-0 mb-3 mb-sm-0">
             <div class="card" style="width: 10rem;">
               <div class="card-body">
-              <img src="plantillas/pagina_7.png" class="card-img-top" alt="...">
+              <img src="plantillas/pagina_3d.png" class="card-img-top" alt="...">
                 <h5 class="card-title"><br>Plantilla 7</h5>
-                <a href="plantilla2I1D.html" class="btn btn-primary">Usar</a>
+                <a href="plantilla3d.html" class="btn btn-primary">Usar</a>
               </div>
             </div>
           </div>
@@ -155,9 +155,9 @@ if ($filas['user_rol'] == 2) {
           <div class="col-sm-0 mb-3 mb-sm-0">
             <div class="card" style="width: 10rem;">
               <div class="card-body">
-              <img src="plantillas/pagina_8.png" class="card-img-top" alt="...">
+              <img src="plantillas/pagina_4a.png" class="card-img-top" alt="...">
                 <h5 class="card-title"><br>Plantilla 8</h5>
-                <a href="plantilla4.html" class="btn btn-primary">Usar</a>
+                <a href="plantilla4a.html" class="btn btn-primary">Usar</a>
               </div>
             </div>
           </div>
@@ -166,9 +166,9 @@ if ($filas['user_rol'] == 2) {
           <div class="col-sm-0 mb-3 mb-sm-0">
             <div class="card" style="width: 10rem;">
               <div class="card-body">
-              <img src="plantillas/pagina_9.png" class="card-img-top" alt="...">
+              <img src="plantillas/pagina_5a.png" class="card-img-top" alt="...">
                 <h5 class="card-title"><br>Plantilla 9</h5>
-                <a href="plantilla5.html" class="btn btn-primary">Usar</a>
+                <a href="plantilla5a.html" class="btn btn-primary">Usar</a>
               </div>
             </div>
           </div>
@@ -177,9 +177,9 @@ if ($filas['user_rol'] == 2) {
           <div class="col-sm-0 mb-3 mb-sm-0">
             <div class="card" style="width: 10rem;">
               <div class="card-body">
-              <img src="plantillas/pagina_10.png" class="card-img-top" alt="...">
+              <img src="plantillas/pagina_6a.png" class="card-img-top" alt="...">
                 <h5 class="card-title"><br>Plantilla 10</h5>
-                <a href="plantilla6Pegados.html" class="btn btn-primary">Usar</a>
+                <a href="plantilla6a.html" class="btn btn-primary">Usar</a>
               </div>
             </div>
           </div>
@@ -188,9 +188,9 @@ if ($filas['user_rol'] == 2) {
           <div class="col-sm-0 mb-3 mb-sm-0">
             <div class="card" style="width: 10rem;">
               <div class="card-body">
-              <img src="plantillas/pagina_11.png" class="card-img-top" alt="...">
+              <img src="plantillas/pagina_6b.png" class="card-img-top" alt="...">
                 <h5 class="card-title"><br>Plantilla 11</h5>
-                <a href="plantilla6Separados.html" class="btn btn-primary">Usar</a>
+                <a href="plantilla6b.html" class="btn btn-primary">Usar</a>
               </div>
             </div>
           </div>

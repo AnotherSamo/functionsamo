@@ -37,7 +37,7 @@
       
       <div class="row" id="saver" >
         <div class="col-md-12 "  style="background-image: url('bg.jpg')">
-          <div class="col-md-4">
+          <div class="col-md-3">
             <div class="image_area">
               <form method="post">
                 <label for="upload_image1">
@@ -60,7 +60,7 @@
               </form>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-3">
             <div class="image_area">
               <form method="post">
                 <label for="upload_image2">
@@ -77,6 +77,75 @@
                     name="image"
                     class="image"
                     id="upload_image2"
+                    style="display: none"
+                  />
+                </label>
+              </form>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="image_area">
+              <form method="post">
+                <label for="upload_image3">
+                  <img
+                    src="user.png"
+                    id="uploaded_image3"
+                    class="img-responsive "
+                  />
+                  <div class="overlay">
+                    <div class="text">Click to Change Profile Image</div>
+                  </div>
+                  <input
+                    type="file"
+                    name="image"
+                    class="image"
+                    id="upload_image3"
+                    style="display: none"
+                  />
+                </label>
+              </form>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="image_area">
+              <form method="post">
+                <label for="upload_image4">
+                  <img
+                    src="user.png"
+                    id="uploaded_image4"
+                    class="img-responsive "
+                  />
+                  <div class="overlay">
+                    <div class="text">Click to Change Profile Image</div>
+                  </div>
+                  <input
+                    type="file"
+                    name="image"
+                    class="image"
+                    id="upload_image4"
+                    style="display: none"
+                  />
+                </label>
+              </form>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="image_area">
+              <form method="post">
+                <label for="upload_image5">
+                  <img
+                    src="user.png"
+                    id="uploaded_image5"
+                    class="img-responsive "
+                  />
+                  <div class="overlay">
+                    <div class="text">Click to Change Profile Image</div>
+                  </div>
+                  <input
+                    type="file"
+                    name="image"
+                    class="image"
+                    id="upload_image5"
                     style="display: none"
                   />
                 </label>
@@ -164,7 +233,7 @@
   </body>
 </html>
 <script>
-    $(document).ready(function(){
+  $(document).ready(function(){
 
 //Mirror functions variables
 var counterY=1;
@@ -176,7 +245,7 @@ var cropper;
 // handle change event for first image input
 $('#upload_image1').change(function(event){
     var files = event.target.files;
-    var imageId = "image1";
+    var imageId = "plantilla5a-image1";
     var done = function (url) {
         var image = document.getElementById('sample_image');
         image.src = url;
@@ -196,7 +265,7 @@ $('#upload_image1').change(function(event){
 // handle change event for second image input
 $('#upload_image2').change(function(event){
     var files = event.target.files;
-    var imageId = "image2";
+    var imageId = "plantilla5a-image2";
     var done = function (url) {
         var image = document.getElementById('sample_image');
         image.src = url;
@@ -213,7 +282,65 @@ $('#upload_image2').change(function(event){
     }
 });
 
+// handle change event for THIRD image input
+$('#upload_image3').change(function(event){
+    var files = event.target.files;
+    var imageId = "plantilla5a-image3";
+    var done = function (url) {
+        var image = document.getElementById('sample_image');
+        image.src = url;
+        image.setAttribute("data-imageId", imageId);
+        $modal.modal('show');
+    };
 
+    if (files && files.length > 0) {
+        reader = new FileReader();
+        reader.onload = function (event) {
+            done(reader.result);
+        };
+        reader.readAsDataURL(files[0]);
+    }
+});
+
+// handle change event for FOURTH image input
+$('#upload_image4').change(function(event){
+    var files = event.target.files;
+    var imageId = "plantilla5a-image4";
+    var done = function (url) {
+        var image = document.getElementById('sample_image');
+        image.src = url;
+        image.setAttribute("data-imageId", imageId);
+        $modal.modal('show');
+    };
+
+    if (files && files.length > 0) {
+        reader = new FileReader();
+        reader.onload = function (event) {
+            done(reader.result);
+        };
+        reader.readAsDataURL(files[0]);
+    }
+});
+
+// handle change event for FIFTH image input
+$('#upload_image5').change(function(event){
+    var files = event.target.files;
+    var imageId = "plantilla5a-image5";
+    var done = function (url) {
+        var image = document.getElementById('sample_image');
+        image.src = url;
+        image.setAttribute("data-imageId", imageId);
+        $modal.modal('show');
+    };
+
+    if (files && files.length > 0) {
+        reader = new FileReader();
+        reader.onload = function (event) {
+            done(reader.result);
+        };
+        reader.readAsDataURL(files[0]);
+    }
+});
 
 $modal.on('shown.bs.modal', function() {
     var image = document.getElementById('sample_image');
@@ -221,9 +348,9 @@ $modal.on('shown.bs.modal', function() {
     aspectRatio: 1,
     viewMode: 3,
     preview: '.preview',
-    rotatable: true,
+rotatable: true,
     zoomOnWheel : true,
-    zoomOnTouch : true
+zoomOnTouch : true
     });
     }).on('hidden.bs.modal', function() {
     cropper.destroy();
@@ -232,25 +359,25 @@ $modal.on('shown.bs.modal', function() {
 
 //Modal's buttons
 $("#rotateLeft").click(function(){
-    cropper.rotate(-90);
+cropper.rotate(-90);
 });
 $("#rotateRight").click(function(){
-    cropper.rotate(90);
+cropper.rotate(90);
 });
 $("#mirrorX").click(function(){
-    if (counterX %2 == 0) {
-        cropper.scaleX(1);
-    } else {
-        cropper.scaleX(-1);
-    }
+if (counterX %2 == 0) {
+  cropper.scaleX(1);
+} else {
+  cropper.scaleX(-1);
+}
 counterX++;
 });
 $("#mirrorY").click(function(){
-    if (counterY %2 == 0) {
-        cropper.scaleY(1);
-    } else {
-        cropper.scaleY(-1);
-    }
+if (counterY %2 == 0) {
+  cropper.scaleY(1);
+} else {
+  cropper.scaleY(-1);
+}
 counterY++;	
 });	
     
