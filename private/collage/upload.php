@@ -27,7 +27,7 @@ if (isset($_POST["image"])) {
     $data = base64_decode($image_array_2[1]);
 
 
-    $imageName = $folder . '_' . $imageId . '.png';
+    $imageName = $folder . '_' . $imageId .time(). '.png';
 
 
     file_put_contents($imageName, $data);

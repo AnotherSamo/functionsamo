@@ -64,7 +64,11 @@ if ($filas['user_rol'] == 2) {
       $('.bxslider').bxSlider();
     });
   </script>
-
+  <style>
+     .hidden {
+    display: none;
+  }
+  </style>
   <body>
     <div class="pos-f-t">
       <div class="collapse" id="navbarToggleExternalContent">
@@ -96,7 +100,7 @@ if ($filas['user_rol'] == 2) {
     <h2 style="text-align: center;">Foto Libro</h2><br>
 
     <?php
-    $folder = '../collage/images/42/pages';
+    $folder = '../collage/images/' . $filas['id_user'] . '/pages';
     $images = glob($folder . '/*.{jpg,jpeg,png,gif}', GLOB_BRACE);
     ?>
     <div class="container swing-in-top-fwd2">
@@ -108,10 +112,16 @@ if ($filas['user_rol'] == 2) {
           <li><img src="<?php echo $image; ?>" alt=""></li>
           <?php
         endforeach;
-
+       
         $valor2 = $filas['total_pages'];
-        $porcentaje = ($contar / $valor2) * 100;
+        $porcentaje = round(($contar / $valor2) * 100, 0);
+        $porcentaje = number_format($porcentaje, 0);
+
+        $userLoad = $filas['id_user'];
+        $currentPages = "UPDATE `users` SET `current_pages`='$contar' WHERE `id_user`='$userLoad'";
+        mysqli_query($link, $currentPages);
         ?>
+
       </ul>
     </div>
 
@@ -122,18 +132,23 @@ if ($filas['user_rol'] == 2) {
 
     <div class="float-child3">
       <div class="green">
-     
+
         <div style="display: flex; justify-content: center; align-items: center; height: 100px;">
-        
+
           <div class="progress" style="width: 40%;">
-          
+
             <div class="progress-bar" role="progressbar" style="width: <?php echo $porcentaje; ?>%;"
               aria-valuenow="<?php echo $porcentaje; ?>" aria-valuemin="0" aria-valuemax="100"></div>
           </div>
         </div>
         <div style="display: flex; justify-content: center; align-items: center; height: 100px;">
-        <div> <h1><?php echo $porcentaje .'%'; ?></h1></div></div>
-        <div class="intern3 scale-in-center">
+          <div>
+            <h1>
+              <?php echo $porcentaje . '%'; ?>
+            </h1>
+          </div>
+        </div>
+        <div class="intern3 scale-in-center" id="mi-imagen">
           <a href="../collage/indice.php"><img src="../../public/img/icons/editIcon.png" alt="" width="50px"
               height="50px"></a>
           <p style="color: black;">Continuar Collage</p>
@@ -147,7 +162,11 @@ if ($filas['user_rol'] == 2) {
       </div>
     </div>
     <!-- BOTONES DE ACCION -->
-
+  <script>
+     <?php if ($contar >= $valor2): ?>
+    document.getElementById("mi-imagen").classList.add("hidden");
+      <?php endif; ?>
+    </script>
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.5/jquery.bxslider.min.js"></script>
