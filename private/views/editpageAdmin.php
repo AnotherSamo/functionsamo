@@ -133,12 +133,10 @@ if ($filas['user_rol'] == 2) {
     <div class="float-child3">
       <div class="green">
 
-        <div style="display: flex; justify-content: center; align-items: center; height: 100px;">
-
-          <div class="progress" style="width: 40%;">
-
-            <div class="progress-bar" role="progressbar" style="width: <?php echo $porcentaje; ?>%;"
-              aria-valuenow="<?php echo $porcentaje; ?>" aria-valuemin="0" aria-valuemax="100"></div>
+      <div style="display: flex; justify-content: center; align-items: center; height: 100px;">
+          <div class="progress" style="width: 60%;">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" aria-label="Progress Label" role="progressbar" style="width: <?php echo $porcentaje; ?>%;"
+              aria-valuenow="<?php echo $porcentaje; ?>" aria-valuemin="0" aria-valuemax="100"> <?php echo $contar . '/' . $valor2; ?></div>
           </div>
         </div>
         <div style="display: flex; justify-content: center; align-items: center; height: 100px;">
