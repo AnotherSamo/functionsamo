@@ -78,17 +78,30 @@ if ($filas['user_rol'] == 2) {
     
     <style>
       .bx-wrapper{max-width: 1024px!important}
-       
+
+      .contenedor1{
+        padding-left:-10px;
+        padding-right:-10px;
+      }
+
+      .formm{
+        width: 277px;
+        height: 396px;
+        margin-top: -148px;
+        margin-left:15px;
+        position: absolute;
+        background-color: #9EB4A2;
+      }
+      
+
       .formm :hover {
         cursor: grab ;
         }
 
       .image_area {
-        height: 800px;
+        height: 700px;
         width: 1000px;
-        padding: 100px;
-        padding-right:80px;
-        padding-top: 200px;
+        
         z-index: 0;
         position: absolute;
         responsive: true,
@@ -103,8 +116,8 @@ if ($filas['user_rol'] == 2) {
       }
       @media (max-width: 500px) {
         .image_area {
-          height: 80px;
-          width: 80px;
+          height: 100px;
+          width: 300px;
         }
       }
 
@@ -118,15 +131,16 @@ if ($filas['user_rol'] == 2) {
       <h3 align="center">Editor Foto Libro</h3>
       <br />
 
-      <div class="container bx-wrapper row d-flex justify-content-center">
-          <img  id="saver" class="border border-dark" style="align-item:center; position:relative; z-index: -1;" src="plantillas/Pagina_1.png" alt="plantilla">
+      <div id="saver" class="contenedor1 container bx-wrapper row d-flex justify-content-center">
+          <img   class="border border-dark" style="align-item:center; position:relative; z-index: -1;" src="plantillas/Pagina_1.png" alt="plantilla">
             <div id="formulario" class="image_area align-self-center">
-              <form class="formm" method="post">
+              <form class="formm border border-dark" method="post">
                 <label for="upload_image1">
                   <img
                     src="user.png"
                     id="uploaded_plantilla1"
-                    class="img-responsive "
+                    class="img-responsive"
+                    alt=""
                   />
                   <input
                     type="file"
@@ -269,7 +283,7 @@ $('#upload_image1').change(function(event){
 $modal.on('shown.bs.modal', function() {
     var image = document.getElementById('sample_image');
     cropper = new Cropper(image, {
-    aspectRatio: 2/3,
+    aspectRatio: 277/396,
     viewMode: 3,
     preview: '.preview',
     rotatable: true,
@@ -334,7 +348,7 @@ $("#crop").click(function(){
 });
 
 $("#saveScreenshot").click(function(){
-    html2canvas(document.querySelector("#saver")).then(canvas => {
+    html2canvas(document.querySelector("#saver"),{scale:4}).then(canvas => {
         var screenshot = canvas.toDataURL();
         $.ajax({
             url: "saveScreenshot.php",

@@ -85,7 +85,7 @@ if ($filas['user_rol'] == 2) {
       <h2 style="text-align: center;">Foto Libro</h2><br>
 
   <?php
-        $folder = '../collage/plantillas';
+        $folder = '../collage/images/42/pages';
         $images = glob($folder.'/*.{jpg,jpeg,png,gif}', GLOB_BRACE);
         ?>
         <div class="container swing-in-top-fwd2">
