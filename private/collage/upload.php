@@ -14,7 +14,7 @@ if (isset($_POST["image"])) {
         $sql2 = "SELECT * FROM students WHERE code_student = '$varsesion'";
         $resultado2 = mysqli_query($link, $sql2);
         $filas2 = mysqli_fetch_array($resultado2);
-        if ($filas['user_rol'] == '3') {
+        if ($filas['student_rol'] == '3') {
             $folder = 'images/' . $filas2['id_user_student'] . '/crops' .'/';
         }
     }
