@@ -12,7 +12,7 @@ if ($varsesion == null || $varsesion = '') {
   die();
 }
 
-if ($filas['user_rol'] == 2) {
+if ($filas['user_rol'] == 1) {
 
   ?>
   <!DOCTYPE html>
@@ -152,9 +152,14 @@ if ($filas['user_rol'] == 2) {
         <div class="intern3 scale-in-center" id="mi-imagen">
           <a href="../collage/indice.php"><img src="../../public/img/icons/editIcon.png" alt="" width="50px"
               height="50px"></a>
-          <p style="color: black;">Continuar Collage</p>
+          <p style="color: black;">Exportar FotoLibro</p>
         </div>
-
+        
+        <div class="intern3 scale-in-center" id="mi-imagen">
+          <a href="../collage/"><img src="../../public/img/icons/deleteIcon.png" alt="" width="50px"
+              height="50px"></a>
+          <p style="color: black;">Editar Incidencias</p>
+        </div>
 
         <div class="intern5 scale-in-center">
           <a href=""><img src="../../public/img/icons/Ayudaicon.png" alt="" width="50px" height="50px"></a>
