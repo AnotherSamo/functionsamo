@@ -69,11 +69,22 @@ if ($filas['user_rol'] == 1) {
       </nav>
     </div>
     <section>
+        
+
       <div class="d-flex justify-content-center">
         <h3>Fotos Disponibles</h3>
 
         <h3>AQUI VA EL USUARIO QUE SELECCIONO A JALAR DE PHP</h3>
-
+        <?php
+     $id=$_GET['id'];
+    $folder = '../collage/images/' . $id . '/pages';
+    $images = glob($folder . '/*.{jpg,jpeg,png,gif}', GLOB_BRACE);
+    ?>
+        <?php
+        foreach ($images as $image):
+          $contar = $contar + 1;
+          ?>
+        
       </div>
       <br>
     <div class="container ">
@@ -83,13 +94,15 @@ if ($filas['user_rol'] == 1) {
         <div class="col-sm-0 mb-3 mb-sm-0">
           <div class="card" style="width: 10rem;">
             <div class="card-body">
-            <img src="plantillas/pagina_1.png" class="card-img-top" alt="...">
-                <h5 class="card-title"><br> Plantilla 1</h5>
-                <a href="plantilla1.php" class="btn btn-primary">Eliminar</a>
+            <img src=src="<?php echo $image;?>" class="card-img-top" alt="No sirve">
+                <h5 class="card-title"><br> Foto<?php echo $contar?></h5>
+                <a href="#" class="btn btn-danger">Eliminar</a>
             </div>
           </div>
         </div>
-         <!-- Carta-->
+         <?php
+        endforeach;
+        ?>
          
       </div>
     </div>
@@ -111,6 +124,6 @@ if ($filas['user_rol'] == 1) {
 } else {
   session_start();
   session_destroy();
-  header("location:../../public/index.php");
+  header("location:../../index.php");
 }
 ?>

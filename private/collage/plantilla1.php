@@ -76,14 +76,7 @@ if ($filas['user_rol'] == 2) {
           </svg> Back</a>
       </nav>
     </div>
-    <script>
-      const responsiveElement = document.getElementById("saver");
-      const fixedElement = document.getElementById("formulario");
-      window.addEventListener("resize", function() {
-        fixedElement.style.width = responsiveElement.offsetWidth + "px";
-        fixedElement.style.height = responsiveElement.offsetHeight + "px";
-      });
-    </script>
+
     <style>
       .bx-wrapper {
         max-width: 1024px !important
@@ -123,14 +116,6 @@ if ($filas['user_rol'] == 2) {
             around: space-around,
             stretch: stretch)
       }
-      .textoingresado{
-        background-color: #00000000;
-        border-color: #00000000;
-        color: white;
-        margin-top:-36px;
-        position: absolute;
-        z-index: 3;
-      }
 
       @media (max-width: 500px) {
         .image_area {
@@ -138,31 +123,6 @@ if ($filas['user_rol'] == 2) {
           width: 300px;
         }
       }
-
-      /*Pantalla 360px x 640px*/
-      @media (max-width: 360px) {
-        .image_area {
-          height: 100px;
-          width: 300px;
-        }
-        .formm {
-        width: 201px;
-        height: 280px;
-        margin-top: -95px;
-        margin-left: 53px;
-        background-color: white;
-        
-      }
-      .textoingresado{
-        margin-top: -30px;
-        height:10%;
-        font-size: 10px;
-        position: relative;
-      }
-      }
-
-
-
 
       img {
         max-width: 100%;
@@ -177,9 +137,7 @@ if ($filas['user_rol'] == 2) {
         /* para que aparezca por encima de otros elementos */
         text-align: center;
       }
-      
     </style>
-    
     <div id="alert-container"></div>
     <div align="center" class="container">
 
@@ -187,13 +145,12 @@ if ($filas['user_rol'] == 2) {
       <br />
 
       <div id="saver" class="contenedor1 container bx-wrapper row d-flex justify-content-center">
-        <img class="border border-dark" style="align-item:center; position:relative; z-index: -1;" src="plantillas/Pagina12.png" alt="plantilla">
+        <img class="border border-dark" style="align-item:center; position:relative; z-index: -1;" src="plantillas/Pagina_1.png" alt="plantilla">
         <div id="formulario" class="image_area align-self-center">
-          <form class="formm border border-light" method="post">
+          <form class="formm border border-dark" method="post">
             <label for="upload_image1">
               <img src="user.png" id="uploaded_image1" class="img-responsive" alt="" />
               <input type="file" name="image" class="image" id="upload_image1" style="display: none" />
-              <input type="textarea" maxlength="30" id="floatingInput" class="textoingresado form-control fs-6" placeholder="Ingresa el texto de la foto (Max. 30)">
             </label>
           </form>
         </div>
@@ -273,22 +230,6 @@ if ($filas['user_rol'] == 2) {
   </footer>
 
   </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   <?php
 
 } else {
