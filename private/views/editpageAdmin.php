@@ -68,9 +68,6 @@ if ($filas['user_rol'] == 2) {
      .hidden {
     display: none;
   }
-  .bx-default-pager {
-    display: none;
-  }
   </style>
   <body>
     <div class="pos-f-t">

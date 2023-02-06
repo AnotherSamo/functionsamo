@@ -103,7 +103,8 @@ if ($filas['user_rol'] == 1) {
     <h2 style="text-align: center;">Foto Libro</h2><br>
 
     <?php
-    $folder = '../collage/images/' . $filas['id_user'] . '/pages';
+     $id=$_GET['id'];
+    $folder = '../collage/images/' . $id . '/pages';
     $images = glob($folder . '/*.{jpg,jpeg,png,gif}', GLOB_BRACE);
     ?>
     <div class="container swing-in-top-fwd2">
@@ -120,7 +121,7 @@ if ($filas['user_rol'] == 1) {
         $porcentaje = round(($contar / $valor2) * 100, 0);
         $porcentaje = number_format($porcentaje, 0);
 
-        $userLoad = $filas['id_user'];
+        $userLoad = $id;
         $currentPages = "UPDATE `users` SET `current_pages`='$contar' WHERE `id_user`='$userLoad'";
         mysqli_query($link, $currentPages);
         ?>
@@ -152,13 +153,16 @@ if ($filas['user_rol'] == 1) {
         <div class="intern3 scale-in-center" id="mi-imagen">
           <a href="../collage/indice.php"><img src="../../public/img/icons/editIcon.png" alt="" width="50px"
               height="50px"></a>
-          <p style="color: black;">Exportar FotoLibro</p>
+          <p style="color: black;">Expotar foto</p>
         </div>
-        
+
         <div class="intern3 scale-in-center" id="mi-imagen">
-          <a href="../collage/"><img src="../../public/img/icons/deleteIcon.png" alt="" width="50px"
+        <?php  echo "<a class='btn btn-primary rounded' type='button' href='../private/collage/incidencias.php?id=".$id."'><img src='../../public/img/icons/deleteIcon.png' width='50px'
+              height='50px'></a>"?>
+                            
+          <a href="../collage/incidencias.php"><img src="../../public/img/icons/deleteIcon.png" alt="" width="50px"
               height="50px"></a>
-          <p style="color: black;">Editar Incidencias</p>
+          <p style="color: black;">Eliminar indicencias</p>
         </div>
 
         <div class="intern5 scale-in-center">
@@ -192,6 +196,6 @@ if ($filas['user_rol'] == 1) {
 } else {
   session_start();
   session_destroy();
-  header("location:../../public/index.php");
+  header("location:../../index.php");
 }
 ?>
